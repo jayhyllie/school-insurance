@@ -1,0 +1,301 @@
+:root {
+    --fs-900: 2.6rem;
+    --fs-700: 2.2rem;
+
+    --clr-500: rbga(0, 0, 0, 0.5);
+    --clr-700: rgba(0, 0, 0, 0.7);
+    --clr-900: rgba(0, 0, 0, 1);
+
+    --bg-blue: #c7ddea;
+    --bg-orange: #f17949;
+    --bg-yellow: #fab131;
+    --bg-gray: #A9A19E;
+    --bg-lightgray: #EBEBEB;
+    --bg-darkgray: #777574;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #ebebeb;
+    width: 100vw;
+    height: 100vh;
+}
+h1,h2,h3,aside {
+    font-family: 'Frank Ruhl Libre', sans-serif;
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+p, button, li {
+    font-family: 'Fira Sans', sans-serif;
+}
+button {
+    background-color: #fff;
+    color: var(--clr-700);
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+a {
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+}
+a.active {
+    color: var(--clr-900);
+    font-weight: 600;
+}
+h1 {
+    font-size: var(--fs-900);
+    font-weight: 900;
+}
+h2 {
+    font-size: var(--fs-700);
+    font-weight: 900;
+}
+p {
+    color: var(--clr-700);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: 
+    "welcome welcome welcome learn learn learn"
+    "welcome welcome welcome join join join"
+    ". navigation navigation navigation navigation ."
+    "info info info info info info"
+    "cards cards cards cards cards cards"
+    "about about about about about about"
+    "how how how how how how"
+    "up up up up up up"
+    "footer footer footer footer footer footer";
+}
+.welcome {
+    min-height: 35rem;
+    grid-area: welcome;
+    background-color: var(--bg-blue);
+    background-image: url('img/family.png');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: bottom right 10%;
+    padding: 5em;
+}
+.welcome__heading {
+    color: var(--clr-900);
+}
+.welcome__text {
+    margin-bottom: 3rem;
+    padding: 0 4rem 0 0;
+}
+.welcome span {
+    color: #fff;
+}
+.learn {
+    grid-area: learn;
+    background-color: var(--bg-orange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 15rem;
+}
+.join {
+    grid-area: join;
+    background-color: var(--bg-yellow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 15rem;
+}
+.learn p, .join p {
+    font-size: 11px;
+}
+.navigation {
+    grid-area: navigation;
+    display: flex;
+    justify-content: space-around;
+    padding: 1.2rem;
+}
+.info {
+    grid-area: info;
+    background-color: var(--bg-gray);
+    min-height: 40rem;
+    display: flex;
+}
+.info__join {
+    max-width: 50%;
+    padding: 5rem;
+}
+.info__text {
+    max-width: 50%;
+    padding: 5rem;
+}
+.info__join h1 {
+    margin-bottom: 3rem;
+}
+.cards {
+    grid-area: cards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-yellow);
+    padding: 2rem 2rem;
+    flex-wrap: wrap;
+}
+.cards h3 {
+    color: var(--clr-900);
+}
+.card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--bg-lightgray);
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 0.5rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-200px);
+    text-align: center;
+    margin-bottom: -8rem;
+    max-width: 275px;
+}
+.card__children, .card__just-right, .card__old-fart {
+    width: 100%;
+    height: 10rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin: 0;
+    transform: translateY(-50px);
+}
+.card__children {
+    background-color: var(--bg-blue);
+    background-image: url('img/child.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center -55%;
+}
+.card__just-right {
+    background-color: var(--bg-yellow);
+    background-image: url('img/adult.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center -5%;
+}
+.card__old-fart {
+    background-color: var(--bg-orange);
+    background-image: url('img/old.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center -10%;
+}
+.about {
+    grid-area: about;
+    background-color: var(--bg-yellow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8rem;
+}
+.about > * {
+    max-width: 450px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.how {
+    grid-area: how;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+}
+.how__box {
+    height: 20rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.how__box h2 {
+    color: var(--clr-700);
+}
+.how__box-blue {
+    background-color: var(--bg-blue);
+}
+.how__box-gray {
+    background-color: var(--bg-lightgray);
+}
+.how__box-orange {
+    background-color: var(--bg-orange);
+}
+.how__box aside {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 45px;
+    color: rgba(0, 0, 0, 0.4);
+}
+.up {
+    grid-area: up;
+    background-color: var(--bg-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer {
+    grid-area: footer;
+    background-color: var(--bg-darkgray);
+    height: 20rem;
+}
+@media screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "welcome"
+        "learn"
+        "join"
+        "navigation"
+        "info"
+        "cards"
+        "about"
+        "how"
+        "up"
+        "footer";
+    }
+    .welcome {
+        padding: 2em;
+    }
+    .info {
+        flex-direction: column;
+        min-height: 50rem;
+    }
+    .info > * {
+        padding: 2em;
+        max-width: 100%;
+    }
+    .cards {
+        background-color: var(--bg-gray);
+        gap: 10em;
+    }
+    .about {
+        padding: 2em;
+    }
+}
